@@ -8,7 +8,7 @@ A FastAPI service that answers questions about any text you give it, using Retri
 3. The response includes the source chunks, so answers can be verified.
 
 ## Tech stack
-Python, FastAPI, LangChain, Google Gemini (chat + embeddings), Pydantic
+Python, FastAPI, LangChain, Google Gemini (chat + embeddings), Pydantic, pytest
 
 ## Setup
 ```
@@ -25,16 +25,14 @@ uvicorn rag_api:app --reload
 Open http://127.0.0.1:8000/docs to try the endpoints.
 
 ## Example
-POST /documents
+`POST /documents`
+```
 {"text": "SynapseBug is a Flask app that summarizes text and hashes passwords with bcrypt."}
-
-POST /ask
+```
+`POST /ask`
+```
 {"question": "How are passwords protected?"}
-
-## Limitations and next steps
-- The vector store is in memory and resets on restart (next: Chroma for persistence).
-- One document at a time (next: per-user collections, PDF upload).
-- No automated tests yet (next: pytest for the endpoints).
+```
 
 ## Evaluation
 An automated eval suite checks the API against a golden set of questions:
@@ -43,7 +41,11 @@ An automated eval suite checks the API against a golden set of questions:
 - `/ask` before any document is indexed must return an error
 
 ```
-pip install -r requirements.txt
 pytest -v
 ```
-Tests call the real LLM, so results can vary slightly; rerun if the service reports high demand.
+Tests call the real LLM, so results can vary slightly. Rerun if the service reports high demand.
+
+## Limitations and next steps
+- The vector store is in memory and resets on restart (next: Chroma for persistence)
+- One document at a time (next: per-user collections, PDF upload)
+- Eval checks use keyword matching (next: semantic similarity or an LLM judge)
