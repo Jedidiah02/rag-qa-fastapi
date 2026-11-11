@@ -48,8 +48,4 @@ Tests call the real LLM, so results can vary slightly. Rerun if the service repo
 ## Limitations and next steps
 - The vector store is in memory and resets on restart (next: Chroma for persistence)
 - One document at a time (next: per-user collections, PDF upload)
-<<<<<<< HEAD
-- Eval checks use keyword matching (next: semantic similarity or an LLM judge)
-=======
-- Eval checks use keyword matching (next: semantic similarity or an LLM judge)
->>>>>>> c5ea2d3 (Add eval suite, trap cases and updated README)
+
