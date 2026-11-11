@@ -5,5 +5,8 @@
   {"id": "min-length", "type": "answerable", "question": "What is the minimum password length?", "expected_any": ["8", "eight"]},
   {"id": "admin-powers", "type": "answerable", "question": "What can admins do?", "expected_any": ["delete"]},
   {"id": "out-of-scope-ceo", "type": "unanswerable", "question": "Who is the CEO of the company?"},
-  {"id": "out-of-scope-geography", "type": "unanswerable", "question": "What is the capital of France?"}
+  {"id": "out-of-scope-geography", "type": "unanswerable", "question": "What is the capital of France?"},
+{"id": "max-length-trap", "type": "unanswerable", "question": "What is the maximum password length?"},
+  {"id": "email-reset", "type": "unanswerable", "question": "How does the password reset email work?"},
+  {"id": "summary-rule", "type": "answerable", "question": "How does the app decide which sentences go in the summary?", "expected_any": ["keyword", "score", "scoring"]}
 ]
