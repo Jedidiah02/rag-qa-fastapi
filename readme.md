@@ -35,3 +35,15 @@ POST /ask
 - The vector store is in memory and resets on restart (next: Chroma for persistence).
 - One document at a time (next: per-user collections, PDF upload).
 - No automated tests yet (next: pytest for the endpoints).
+
+## Evaluation
+An automated eval suite checks the API against a golden set of questions:
+- Answerable questions must contain the expected facts and return source passages
+- Out-of-scope questions must be declined instead of answered
+- `/ask` before any document is indexed must return an error
+
+```
+pip install -r requirements.txt
+pytest -v
+```
+Tests call the real LLM, so results can vary slightly; rerun if the service reports high demand.

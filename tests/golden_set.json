@@ -1,0 +1,9 @@
+[
+  {"id": "password-hashing", "type": "answerable", "question": "How are passwords stored?", "expected_any": ["bcrypt", "hash"]},
+  {"id": "database", "type": "answerable", "question": "Which database does the app use?", "expected_any": ["sqlite"]},
+  {"id": "keywords", "type": "answerable", "question": "What does the app use for keyword extraction?", "expected_any": ["rake"]},
+  {"id": "min-length", "type": "answerable", "question": "What is the minimum password length?", "expected_any": ["8", "eight"]},
+  {"id": "admin-powers", "type": "answerable", "question": "What can admins do?", "expected_any": ["delete"]},
+  {"id": "out-of-scope-ceo", "type": "unanswerable", "question": "Who is the CEO of the company?"},
+  {"id": "out-of-scope-geography", "type": "unanswerable", "question": "What is the capital of France?"}
+]
